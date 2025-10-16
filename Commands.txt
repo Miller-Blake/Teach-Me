@@ -1,0 +1,50 @@
+Explain Code (Default Command)
+
+  This command explains a code file line by line. You pipe the code into the command.
+
+  Usage:
+
+   1 cat <file_path> | teach-me [options]
+
+  Example:
+
+   1 cat script.py | teach-me --lang python --focus security
+
+  Options:
+
+   * --lang <language>: Specifies the language of the code. Defaults to text.
+   * --focus <focus_mode>: Specifies the aspect of the code to emphasize. Available focus modes are: logic, performance, style, security, best-practices.
+
+  Interactive Mode
+
+  This command starts a conversational tutoring session about a specific code file.
+
+  Usage:
+
+   1 teach-me interactive <file_path> [options]
+
+  Example:
+
+   1 teach-me interactive script.py --lang python --persona professor --focus performance
+
+  Arguments:
+
+   * <file_path>: The path to the code file to discuss.
+
+  Options:
+
+   * --lang <language>: Specifies the language of the code. Defaults to text.
+   * --persona <persona>: Sets the teaching persona. The default is professor. Available
+     personas are:
+       * professor
+       * peer
+       * debugger
+       * storyteller
+       * comedian
+       * minimalist
+   * --focus <focus_mode>: Specifies the aspect of the code to emphasize. Available focus modes are:
+       * logic: Explain the control flow and reasoning step by step.
+       * performance: Highlight bottlenecks or inefficiencies.
+       * style: Comment on readability, naming, and structure.
+       * security: Point out potential vulnerabilities or unsafe patterns.
+       * best-practices: Explain how the code aligns (or not) with conventions.
