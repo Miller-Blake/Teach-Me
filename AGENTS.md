@@ -59,7 +59,7 @@ The Teaching Personas system lets you choose how your tutor behaves and speaks.
 
 Example:
 ```bash
-teach-me interactive script.py --persona professor
+py -m teach-me interactive script.py --persona professor 
 ```
 # Available Personas (Planned)
 Persona	Description	Tone
@@ -81,7 +81,7 @@ Concise, efficient
 Purpose: control what aspect of the code the tutor emphasizes.
 For example:
 ```bash
-teach-me --lang python --persona professor --focus performance
+py -m teach-me --lang python --persona professor --focus performance
 ```
 
 Focus modes:
