@@ -6,18 +6,18 @@ It explains code line by line, answers questions about how it works, and even ad
 
 Or enter interactive tutoring mode:
 
-teach-me interactive script.py
+py -m teach-me interactive script.py
 
 You can pipe code directly:
 ```bash
-cat script.py | teach-me --lang python
+cat script.py | py -m teach_me --lang python
 ```
 ## 🏗️ Core Features (v1.0 MVP)
 
 ✅ Explain Code (Base Command)
 
 ```bash
-cat script.py | teach-me --lang python
+cat script.py | py -m teach_me --lang python
 ```
 
 Reads code from stdin, sends it to the OpenAI API, and prints a line-by-line explanation.
@@ -37,12 +37,12 @@ A conversational mode where you can talk to your AI tutor about code.
 
 Example:
 ```bash
-teach-me interactive script.py --focus security
+py -m teach_me interactive script.py --focus security
 ```
 
 Or with a persona and focus:
 ```bash
-teach-me interactive script.py --persona debugger --focus performance
+py -m teach_me interactive script.py --persona debugger --focus performance
 ```
 
 Then:
@@ -59,7 +59,7 @@ The Teaching Personas system lets you choose how your tutor behaves and speaks.
 
 Example:
 ```bash
-py -m teach-me interactive script.py --persona professor 
+py -m teach_me interactive script.py --persona professor 
 ```
 # Available Personas (Planned)
 Persona	Description	Tone
@@ -81,7 +81,7 @@ Concise, efficient
 Purpose: control what aspect of the code the tutor emphasizes.
 For example:
 ```bash
-py -m teach-me --lang python --persona professor --focus performance
+py -m teach_me --lang python --persona professor --focus performance
 ```
 
 Focus modes:

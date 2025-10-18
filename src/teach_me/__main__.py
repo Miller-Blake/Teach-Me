@@ -4,7 +4,7 @@ import argparse
 import openai
 from rich.console import Console
 from rich.markdown import Markdown
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 PERSONAS = {
     "professor": "Formal and detailed explanations with analogies and mini-lectures.",
@@ -128,13 +128,15 @@ def interactive_session(console, file_path, lang, persona="professor", focus=Non
     console.print("\nInteractive session ended.")
 
 def main():
-    """Main function to run the CLI.
-    
-    Parses arguments and calls the appropriate function.
+    """Main function to run the CLI application.
+
+    This function handles command-line argument parsing, environment variable loading,
+    API key validation, and dispatches control to either `explain_code_from_stdin`
+    for code explanation via piped input or `interactive_session` for an interactive
+    tutoring experience based on the provided arguments.
     """
-    load_dotenv()
-    if os.path.exists(".env.local"):
-        load_dotenv(dotenv_path=".env.local")
+    load_dotenv(find_dotenv())  # Looks for .env
+    load_dotenv(find_dotenv('.env.local'), override=True)
 
     api_key = os.getenv("OPENAI_API_KEY") or os.getenv("OPEN_AI_CHAT_KEY")
     if not api_key:

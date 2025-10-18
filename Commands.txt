@@ -4,11 +4,11 @@ Explain Code (Default Command)
 
   Usage:
 
-   1 cat <file_path> | teach-me [options]
+   1 cat <file_path> | py -m teach_me [options]
 
   Example:
 
-   1 cat script.py | teach-me --lang python --focus security
+   1 cat script.py | py -m teach_me --lang python --focus security
 
   Options:
 
@@ -21,11 +21,11 @@ Explain Code (Default Command)
 
   Usage:
 
-    teach-me interactive <file_path> [options]
+    py -m teach_me interactive <file_path> [options]
 
   Example:
 
-   py -m teach-me interactive script.py --lang python --persona professor --focus performance
+   py -m teach_me interactive script.py --lang python --persona professor --focus performance
 
   Arguments:
 

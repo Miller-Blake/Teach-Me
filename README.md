@@ -6,7 +6,8 @@
 
 ## Project Overview
 
-`teach-me` is an innovative Command Line Interface (CLI) tool designed to transform your terminal into a dynamic and interactive code tutor. Leveraging the power of AI, it provides comprehensive, line-by-line explanations of your code, answers specific questions, and adapts its teaching style through various personas to match your unique learning preferences. This tool is ideal for developers seeking to deepen their understanding of code, debug complex logic, or simply explore new programming concepts with personalized guidance.
+`teach-me` (the `teach_me` Python module) is an innovative Command Line Interface (CLI) tool
+ designed to transform your terminal into a dynamic and interactive code tutor. Leveraging the power of AI, it provides comprehensive, line-by-line explanations of your code, answers specific questions, and adapts its teaching style through various personas to match your unique learning preferences. This tool is ideal for developers seeking to deepen their understanding of code, debug complex logic, or simply explore new programming concepts with personalized guidance.
 
 ## Features
 
@@ -66,7 +67,45 @@ With your virtual environment activated, install all required Python packages:
 pip install -r requirements.txt
 ```
 
-### 4. Configure Your OpenAI API Key
+### 4. Making `teach-me` Globally Accessible (Optional but Recommended)
+
+To use `teach-me` as a command-line tool from any directory, you have two main options:
+
+#### Option A: Using `py -m teach_me` (Recommended for Python Environments)
+
+This method is generally more reliable and doesn't require modifying your system's PATH. It explicitly tells Python to run the `teach_me` module.
+
+**Usage Example:**
+
+Instead of `teach-me interactive my_script.py`, you would use:
+
+```bash
+py -m teach_me interactive my_script.py --lang python
+```
+
+This approach works well when calling `teach-me` from other Python scripts or when you prefer not to modify system-wide environment variables.
+
+#### Option B: Adding to System PATH (For Direct CLI Access)
+
+If you want to run `teach-me` directly as a command (e.g., `teach-me interactive my_script.py`) from any terminal, you need to add the directory containing the `teach-me.exe` executable to your system's PATH environment variable.
+
+**For Windows Users:**
+
+The `teach-me.exe` script is typically installed in your Python's `Scripts` directory. Based on your system, this path is likely:
+
+`C:\Users\bmill\AppData\Local\Programs\Python\Python313\Scripts`
+
+To add this to your system's PATH:
+
+1.  **Search for "Environment Variables"** in the Windows search bar and select "Edit the system environment variables".
+2.  Click the "**Environment Variables...**" button.
+3.  Under "System variables", find and select the `Path` variable, then click "**Edit...**".
+4.  Click "**New**" and add the path: `C:\Users\bmill\AppData\Local\Programs\Python\Python313\Scripts`
+5.  Click "**OK**" on all open windows to save the changes.
+
+**Important:** You might need to restart your command prompt or IDE for the changes to take effect.
+
+### 5. Configure Your OpenAI API Key
 
 `teach-me` utilizes the OpenAI API for its core AI capabilities. You must provide your API key for the tool to function.
 
